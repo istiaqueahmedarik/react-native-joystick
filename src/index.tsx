@@ -4,7 +4,7 @@ import * as utils from "./utils";
 import { Gesture, GestureDetector, GestureTouchEvent } from "react-native-gesture-handler";
 import { IReactNativeJoystickProps } from "./types";
 
-export const ReactNativeJoystick = ({ onStart, onMove, onStop, color = "#000000", radius = 150 }: IReactNativeJoystickProps) => {
+export const ReactNativeJoystick = ({ onStart, onMove, onStop, reset = true, color = "#000000", radius = 150 }: IReactNativeJoystickProps) => {
   const wrapperRadius = radius;
   const nippleRadius = wrapperRadius / 3;
 
@@ -53,6 +53,7 @@ export const ReactNativeJoystick = ({ onStart, onMove, onStop, color = "#000000"
   );
 
   const handleTouchEnd = () => {
+    if(reset===false){setX(wrapperRadius - nippleRadius);  return;}
     setX(wrapperRadius - nippleRadius);
     setY(wrapperRadius - nippleRadius);
     onStop &&
@@ -71,6 +72,7 @@ export const ReactNativeJoystick = ({ onStart, onMove, onStop, color = "#000000"
   };
 
   const handleTouchStart = () => {
+    if(reset===false){setX(wrapperRadius - nippleRadius);  return;}
     onStart &&
       onStart({
         force: 0,
