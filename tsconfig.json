@@ -6,7 +6,7 @@
       "react": ["./example/node_modules/react"],
       "react-native-gesture-handler": ["./example/node_modules/react-native-gesture-handler"]
     },
-    "typeRoots": ["./example/node_modules/@types"],
+    "typeRoots": ["./node_modules/@types"],
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
