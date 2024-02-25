@@ -17,4 +17,5 @@ export interface IReactNativeJoystickProps {
   onStop?: (e: IReactNativeJoystickEvent) => void;
   radius?: number;
   color?: string;
+  reset?: boolean
 }
